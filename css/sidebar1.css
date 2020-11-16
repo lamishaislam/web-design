@@ -1,0 +1,224 @@
+/* The sidebar menu */
+
+.nav-menu {
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    width: 14%;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    transition: all 0.5s;
+    z-index: 997;
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: var(--dark);
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding: 1rem 1rem;
+    color: white;
+}
+
+
+/* The navigation menu links */
+
+.nav-menu img {
+    /* border-radius: 50%; */
+    width: 100%;
+    transition: 0.3s;
+    padding: 0.5rem 1rem;
+    margin: 0rem 0.1rem;
+}
+
+.nav-menu span {
+    margin-left: 0.3rem;
+}
+
+.nav-menu hr {
+    background: white;
+}
+
+.nav-menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: #f1f1f1;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    transition: 0.3s;
+    padding: 0.5rem 0.5rem;
+    text-transform: capitalize;
+    /* margin: 0rem 0.1rem; */
+}
+
+.nav-menu a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-menu a:hover:before,
+.nav-menu li:hover>a:before,
+.nav-menu .active>a:before {
+    visibility: visible;
+    width: 100%;
+}
+
+
+/* Mobile Navigation */
+
+.mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+}
+
+.mobile-nav-toggle i {
+    color: #fff;
+    padding: 0.5rem 0.5rem;
+    background: black;
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 55px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    z-index: 9999;
+    overflow-y: auto;
+    background: var(--dark);
+    transition: ease-in-out 0.2s;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 10px;
+    padding: 1rem 1rem 5rem 1rem;
+    height: 100%;
+}
+
+.mobile-nav * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mobile-nav img {
+    /* border-radius: 50%; */
+    width: 100%;
+    transition: 0.3s;
+    padding: 0.5rem 1rem;
+    margin: 0rem 0.1rem;
+}
+
+.mobile-nav hr {
+    background: black;
+}
+
+.mobile-nav span {
+    margin-left: 0.3rem;
+    color: white;
+}
+
+.mobile-nav a {
+    display: block;
+    position: relative;
+    color: white;
+    padding: 10px 20px;
+    outline: none;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.mobile-nav a:hover {
+    color: white;
+}
+
+.mobile-nav .drop-down>a:after {
+    content: "\ea99";
+    font-family: IcoFont;
+    padding-left: 10px;
+    position: absolute;
+    right: 15px;
+}
+
+.mobile-nav .active.drop-down>a:after {
+    content: "\eaa1";
+}
+
+.mobile-nav .drop-down>a {
+    padding-right: 35px;
+}
+
+.mobile-nav .drop-down ul {
+    display: none;
+    overflow: hidden;
+}
+
+.mobile-nav .drop-down li {
+    padding-left: 20px;
+}
+
+.mobile-nav-overly {
+    width: 100%;
+    height: 100%;
+    z-index: 9997;
+    top: 0;
+    left: 0;
+    position: fixed;
+    overflow: hidden;
+    display: none;
+    transition: ease-in-out 0.2s;
+}
+
+.mobile-nav-active {
+    overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+    color: #fff;
+    background: black;
+    padding: 0.5rem 0.5rem;
+}
+
+.main {
+    margin-left: 14%;
+    /* Same as the width of the sidebar */
+    padding: 1rem 1rem;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+
+@media only screen and (max-width: 792px) {
+    .main {
+        margin-left: 0;
+        /* Same as the width of the sidebar */
+        padding: 1rem 1rem;
+    }
+}
